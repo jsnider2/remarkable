@@ -6,6 +6,7 @@
 
 var fs = require('fs');
 var argparse = require('argparse');
+var hljs = require('highlight.js');
 
 var Remarkable = require('..');
 
@@ -44,7 +45,7 @@ cli.addArgument([ '--no-typographer' ], {
 });
 
 cli.addArgument([ '--highlight' ], {
-  help: 'Enable syntax highlighting for fenced blocks (Requires highlight.js be installed)',
+  help: 'Enable syntax highlighting for fenced blocks',
   nargs: 0
 });
 
@@ -92,15 +93,6 @@ readFile(options.file, 'utf8', function (err, input) {
   };
 
   if (options.highlight) {
-    var hljs;
-
-    try {
-      hljs = require('highlight.js');
-    } catch (e) {
-      console.error('highlight.js could not be loaded. Please make sure it is installed before using --highlight');
-      process.exit(1);
-    }
-
     mdopts.highlight = function (str, lang) {
       if (lang && hljs.getLanguage(lang)) {
         try {
