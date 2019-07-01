@@ -13,11 +13,27 @@ copyright
 .
 
 
+escaped-copyright
+.
+(\c) (\C)
+.
+<p>(c) (C)</p>
+.
+
+
 reserved
 .
 (r) (R)
 .
 <p>® ®</p>
+.
+
+
+escaped-reserved
+.
+(\r) (\R)
+.
+<p>(r) (R)</p>
 .
 
 
@@ -29,11 +45,27 @@ trademark
 .
 
 
+escaped-trademark
+.
+(\tm) (\TM)
+.
+<p>(tm) (TM)</p>
+.
+
+
 paragraph
 .
 (p) (P)
 .
 <p>§ §</p>
+.
+
+
+escaped-paragraph
+.
+(\p) (\P)
+.
+<p>(p) (P)</p>
 .
 
 
@@ -81,4 +113,3 @@ remarkable--awesome
 <p>–remarkable – super–</p>
 <p>remarkable–awesome</p>
 .
-
